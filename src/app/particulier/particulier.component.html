@@ -1,0 +1,17 @@
+<main style="margin-top: 65px;" [@routerTransition]="getState(o)">
+    <div class="row justify-content-center">
+        <mat-button-toggle [routerLink]="['/particulier/depannage-a-domicile', 4]">
+          <span>Dépannage à domicile</span>
+        </mat-button-toggle>
+        &nbsp;
+        <mat-button-toggle [routerLink]="['/particulier/reparations-et-maintenance-en-atelier', 5]">
+          <!-- <mat-icon>notifications_off</mat-icon> -->
+          <span>Formation Informatique</span>
+        </mat-button-toggle>
+        &nbsp;
+        <mat-button-toggle [routerLink]="['/particulier/formation-informatique', 6]">
+          <span>Réparations et maintenance en atelier</span>
+        </mat-button-toggle>
+      </div>
+  <router-outlet #o="outlet"></router-outlet>
+</main>

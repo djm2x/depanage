@@ -75,7 +75,16 @@ var Startup = (function () {
         this.app.get('*.*', express.static(DIST_FOLDER, { maxAge: '1y' }));
         this.app.route('*').get(function (req, res) {
             console.log(req.originalUrl);
-            res.render('index', { req: req });
+            res.render('index', {
+                req: req,
+                res: res,
+                providers: [
+                    { provide: 'REQUEST', useValue: req },
+                    { provide: 'RESPONSE', useValue: res }
+                ]
+            }, function (err, html) {
+                res.status(html ? 200 : 500).send(html || err.message);
+            });
         });
         return this;
     };

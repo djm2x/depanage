@@ -1,0 +1,17 @@
+<main style="margin-top: 65px;" [@routerTransition]="getState(o)">
+  <div class="row justify-content-center">
+    <mat-button-toggle [routerLink]="['/services-professionnels/depannage', 1]">
+      <span>Depannage</span>
+    </mat-button-toggle>
+    &nbsp;
+    <mat-button-toggle [routerLink]="['/services-professionnels/reparation', 2]">
+      <!-- <mat-icon>notifications_off</mat-icon> -->
+      <span>Reparation</span>
+    </mat-button-toggle>
+    &nbsp;
+    <mat-button-toggle [routerLink]="['/services-professionnels/formation', 3]">
+      <span>Formations</span>
+    </mat-button-toggle>
+  </div>
+  <router-outlet #o="outlet"></router-outlet>
+</main>

@@ -1,0 +1,19 @@
+<app-title title="Chiffre" section="2"></app-title>
+<br>
+<div class="container">
+  <!-- {{isLogged | json}} -->
+  <button *ngIf="isLogged | async" mat-raised-button (click)="openDialogForDelete()" color="primary">
+    <!-- <mat-icon>{{ icon }}</mat-icon> -->
+    <!-- {{ action }} --> edit
+  </button>
+  <mat-card>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let o of list; let i=index">
+        <mat-card class="text-center">
+          <h1>{{o.count}}</h1>
+          <h4>{{o.name}}</h4>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</div>

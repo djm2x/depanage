@@ -7,6 +7,9 @@
 
 # dependencies
 /node_modules
+/publish
+/data
+/migration
 
 # profiling files
 chrome-profiler-events.json

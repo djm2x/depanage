@@ -1,0 +1,22 @@
+<app-title title="nos service" section="4"></app-title>
+<br>
+<div class="container">
+  <mat-card>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let o of list; let i=index">
+        <mat-card class="text-center">
+          {{o.route}}
+          <a [routerLink]="[o.route]">
+            <div class="item">
+              <!-- [ngStyle]="{'border-radius': radius, 'border': border}"> -->
+              <!-- <div class="example-loading-shade" *ngIf="isImageLoading"></div> class="image-responsive" -->
+              <img (error)="imgError(im)" [src]="o.imgUrl" #im class="image-responsive" style="height: auto;">
+              <!-- [ngStyle]="{'width': width, 'height': height, 'border-radius': radius, 'padding-right': paddingRight}"> -->
+            </div>
+          </a>
+          <h4>{{o.name}}</h4>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</div>

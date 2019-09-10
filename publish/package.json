@@ -15,6 +15,7 @@
     "cs": "tsc -p tsconfig.server.json",
     "bw": "ng build --extractCss --watch",
     "wp": "webpack --config webpack.config.js --progress --colors",
+    "go": "git init && git remote add origin https://github.com/djm2x/reparation.git",
     "git": "git add . && git commit -m '1' && git push -u origin master",
     "log": "heroku logs --source app --app alaoui-reparation --tail"
   },

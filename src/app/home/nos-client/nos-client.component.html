@@ -1,0 +1,23 @@
+<app-title title="nos client" section="3"></app-title>
+<br>
+<div class="container">
+  <button *ngIf="isLogged | async" mat-raised-button (click)="openDialogForDelete()" color="primary">
+    <!-- <mat-icon>{{ icon }}</mat-icon> -->
+    <!-- {{ action }} --> edit
+  </button>
+  <mat-card>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let o of list; let i=index">
+        <mat-card class="text-center">
+          <div class="item" >
+          <!-- [ngStyle]="{'border-radius': radius, 'border': border}"> -->
+            <!-- <div class="example-loading-shade" *ngIf="isImageLoading"></div> class="image-responsive" -->
+            <img (error)="imgError(im)" [src]="o.imgUrl" #im class="image-responsive" style="height: auto;">
+              <!-- [ngStyle]="{'width': width, 'height': height, 'border-radius': radius, 'padding-right': paddingRight}"> -->
+          </div>
+          <h4>{{o.name}}</h4>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</div>

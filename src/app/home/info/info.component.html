@@ -1,0 +1,42 @@
+<app-title title="Info" section="3"></app-title>
+<div class="container" appScroll (sectionChange)="onSectionChange($event)">
+  <div class="row justify-content-center">
+    <!-- <div class="col-md-6 text-center" [@scrollAnimation]="state"> -->
+    <div class="col-md-6 text-center">
+      <mat-card style="box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px 0 20px;">
+        <form [formGroup]="myForm" (ngSubmit)="submit(myForm)">
+          <div class="example-container">
+            <mat-form-field>
+              <input matInput placeholder="Subject" formControlName="subject">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="email">
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <textarea matInput placeholder="Message" formControlName="message"></textarea>
+            </mat-form-field>
+            <button mat-raised-button type="submit" color="primary" [disabled]="!myForm.valid"
+              style="border-radius: 0;">SEND</button>
+          </div>
+        </form>
+
+      </mat-card>
+    </div>
+    <!-- <div class="col-md-6 text-center" [@scrollAnimation]="state"> -->
+    <div class="col-md-6 text-center">
+      <mat-card style="box-shadow: 2px 2px 10px 1px rgba(0,0,0,.2);margin: 20px 0 20px;border-radius: 4px;">
+        <div *ngIf="isBrowser">
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false">
+
+            <agm-marker [latitude]="lat" [longitude]="lng">
+
+            </agm-marker>
+
+
+          </agm-map>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
